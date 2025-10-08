@@ -5,7 +5,7 @@
 
     <link name="camera_link">
       <visual>
-        <origin xyz="0.05 0 0" rpy="0 0 1.5708"/>
+        <origin xyz="0 0 0" rpy="0 0 1.5708"/>
         <geometry>
           <mesh filename="package://realsense2_description/meshes/d435.dae" />
         </geometry>
@@ -14,7 +14,8 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <box size="0.02 0.05 0.05"/>
+          <!-- <box size="0.02 0.05 0.05"/> -->
+          <box size="0.0 0.0 0.0"/>
         </geometry>
       </collision>
       <inertial>
@@ -26,7 +27,7 @@
     <joint name="camera_joint" type="fixed">
       <parent link="${parent}"/>
       <child link="camera_link"/>
-      <origin xyz="0.05 0 0.05" rpy="0 0 0"/> 
+      <origin xyz="0.0389 0 -0.0389" rpy="0 0.7854 0"/> 
     </joint>
 
     <link name="camera_optical_frame"/>
@@ -36,39 +37,6 @@
       <child link="camera_optical_frame"/>
       <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708"/> 
     </joint>
-
-    <!-- <gazebo reference="camera_link">
-      <material>Gazebo/Black</material>
-      <sensor type="camera" name="gripper_camera_sensor">
-        <update_rate>30.0</update_rate>
-        <camera name="head">
-          <horizontal_fov>1.3962634</horizontal_fov>
-          <image>
-            <width>800</width>
-            <height>800</height>
-            <format>R8G8B8</format>
-          </image>
-          <clip>
-            <near>0.02</near>
-            <far>300</far>
-          </clip>
-        </camera>
-        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-          <alwaysOn>true</alwaysOn>
-          <updateRate>0.0</updateRate>
-          <cameraName>z1/camera</cameraName>
-          <imageTopicName>image_raw</imageTopicName>
-          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-          <frameName>camera_optical_frame</frameName>
-          <hackBaseline>0.07</hackBaseline>
-          <distortionK1>0.0</distortionK1>
-          <distortionK2>0.0</distortionK2>
-          <distortionK3>0.0</distortionK3>
-          <distortionT1>0.0</distortionT1>
-          <distortionT2>0.0</distortionT2>
-        </plugin>
-      </sensor>
-    </gazebo> -->
 
     <gazebo reference="camera_link">
       <material>Gazebo/Black</material>
@@ -101,6 +69,13 @@
           <distortionT2>0.0</distortionT2>
         </plugin>
       </sensor>
+      <collision>
+        <surface>
+          <contact>
+            <collide_bitmask>0x01</collide_bitmask>
+          </contact>
+        </surface>
+      </collision>
     </gazebo>
 
   </xacro:macro>

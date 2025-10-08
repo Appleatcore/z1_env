@@ -17,6 +17,25 @@
         <child link="link00"/>
     </joint>
 
+    <link name="combine_link">
+        <visual name="visual">
+            <geometry>
+                <mesh filename="package://z1_description/meshes/visual/combine.dae" scale="1 1 1"/>
+            </geometry>
+        </visual>
+        <collision name="collision">
+            <geometry>
+                <mesh filename="package://z1_description/meshes/collision/combine.stl" scale="1 1 1"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="world_to_combine_joint" type="fixed">
+        <origin xyz="1 0 0.2" rpy="0 0 1.5708"/>
+        <parent link="link00"/>
+        <child link="combine_link"/>
+    </joint>
+
     <link name="link00">
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -304,6 +323,13 @@
 
         <gazebo reference="gripperMover">
             <self_collide>true</self_collide>
+            <collision>
+                <surface>
+                <contact>
+                    <collide_bitmask>0x01</collide_bitmask>
+                </contact>
+                </surface>
+            </collision>
         </gazebo>
     </xacro:if>
 
