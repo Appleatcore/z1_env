@@ -12,7 +12,7 @@
     <link name="world"/>
 
     <joint name="base_static_joint" type="fixed">
-        <origin rpy="0 0 0" xyz="0 0 0.55"/>
+        <origin rpy="0 0 0" xyz="0 0 0.6"/>
         <parent link="world"/>
         <child link="link00"/>
     </joint>
@@ -31,7 +31,7 @@
     </link>
 
     <joint name="world_to_combine_joint" type="fixed">
-        <origin xyz="1.0 0 0.025" rpy="0 0 1.5708"/>
+        <origin xyz="1.0 0 0.075" rpy="0 0 1.5708"/>
         <parent link="link00"/>
         <child link="combine_link"/>
     </joint>
