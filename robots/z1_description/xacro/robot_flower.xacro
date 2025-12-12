@@ -17,7 +17,7 @@
         <child link="link00"/>
     </joint>
 
-    <!-- <link name="flower_link">
+    <link name="flower_link">
         <visual name="visual">
             <geometry>
                 <mesh filename="package://z1_description/meshes/visual/flower.dae" scale="1 1 1"/>
@@ -31,10 +31,10 @@
     </link>
 
     <joint name="link00_to_flower_joint" type="fixed">
-        <origin xyz="0.75 0.0 0.2" rpy="0.2 -1.56 0.0"/>
+        <origin xyz="0.8 0.0 0.2" rpy="0.0 -1.46 0.0"/>
         <parent link="link00"/>
         <child link="flower_link"/>
-    </joint> -->
+    </joint>
 
     <link name="link00">
         <visual>
@@ -339,7 +339,6 @@
     <xacro:motorTransmission name="4"/>
     <xacro:motorTransmission name="5"/>
     <xacro:motorTransmission name="6"/>
-<xacro:if value="$(arg UnitreeGripper)">
-    <xacro:gripper_camera parent="gripperMover" />
-</xacro:if>
+
+<xacro:gripper_camera parent="gripperMover" />
 </robot>

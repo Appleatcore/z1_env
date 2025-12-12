@@ -17,24 +17,24 @@
         <child link="link00"/>
     </joint>
 
-    <!-- <link name="flower_link">
+    <link name="combine_link">
         <visual name="visual">
             <geometry>
-                <mesh filename="package://z1_description/meshes/visual/flower.dae" scale="1 1 1"/>
+                <mesh filename="package://z1_description/meshes/visual/combine.dae" scale="1 1 1"/>
             </geometry>
         </visual>
         <collision name="collision">
             <geometry>
-                <mesh filename="package://z1_description/meshes/collision/flower.stl" scale="1 1 1"/>
+                <mesh filename="package://z1_description/meshes/collision/combine.stl" scale="1 1 1"/>
             </geometry>
         </collision>
     </link>
 
-    <joint name="link00_to_flower_joint" type="fixed">
-        <origin xyz="0.75 0.0 0.2" rpy="0.2 -1.56 0.0"/>
+    <joint name="world_to_combine_joint" type="fixed">
+        <origin xyz="0.85 0.0 0.0" rpy="0.7 0.1 1.5708"/>
         <parent link="link00"/>
-        <child link="flower_link"/>
-    </joint> -->
+        <child link="combine_link"/>
+    </joint>
 
     <link name="link00">
         <visual>
@@ -339,7 +339,6 @@
     <xacro:motorTransmission name="4"/>
     <xacro:motorTransmission name="5"/>
     <xacro:motorTransmission name="6"/>
-<xacro:if value="$(arg UnitreeGripper)">
-    <xacro:gripper_camera parent="gripperMover" />
-</xacro:if>
+
+<xacro:gripper_camera parent="gripperMover" />
 </robot>
