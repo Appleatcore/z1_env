@@ -6,6 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /Grid1
         - /RobotModel1/Links1
         - /TF1
         - /TF1/Frames1
@@ -60,7 +61,7 @@ Visualization Manager:
         Z: 0
       Plane: XY
       Plane Cell Count: 10
-      Reference Frame: <Fixed Frame>
+      Reference Frame: world
       Value: true
     - Alpha: 1
       Class: rviz/RobotModel
@@ -81,7 +82,7 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        combine_link:
+        flower_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -152,10 +153,10 @@ Visualization Manager:
           Value: false
         combine_frame:
           Value: false
-        combine_link:
-          Value: false
         flower_frame:
           Value: false
+        flower_link:
+          Value: true
         gripperMover:
           Value: false
         gripperStator:
@@ -189,7 +190,7 @@ Visualization Manager:
       Tree:
         world:
           link00:
-            combine_link:
+            flower_link:
               {}
             input_frame:
               combine_frame:
@@ -225,7 +226,7 @@ Visualization Manager:
       Shaft Length: 0.003000000026077032
       Shaft Radius: 0.003000000026077032
       Shape: Arrow (Flat)
-      Topic: /arm_controller/line_half1
+      Topic: /arm_controller/cross_line_left1
       Unreliable: true
       Value: true
     - Alpha: 1
@@ -242,7 +243,7 @@ Visualization Manager:
       Shaft Length: 0.003000000026077032
       Shaft Radius: 0.003000000026077032
       Shape: Arrow (Flat)
-      Topic: /arm_controller/line_half2
+      Topic: /arm_controller/cross_line_left2
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -259,7 +260,7 @@ Visualization Manager:
       Shaft Length: 0.003000000026077032
       Shaft Radius: 0.003000000026077032
       Shape: Arrow (Flat)
-      Topic: /arm_controller/line_mid
+      Topic: /arm_controller/cross_line_mid
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -276,7 +277,7 @@ Visualization Manager:
       Shaft Length: 0.23000000417232513
       Shaft Radius: 0.009999999776482582
       Shape: Arrow (Flat)
-      Topic: /arm_controller/line_out1
+      Topic: /arm_controller/cross_line_top1
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -293,7 +294,7 @@ Visualization Manager:
       Shaft Length: 0.23000000417232513
       Shaft Radius: 0.009999999776482582
       Shape: Arrow (Flat)
-      Topic: /arm_controller/line_out2
+      Topic: /arm_controller/cross_line_top2
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -332,7 +333,7 @@ Visualization Manager:
       Value: true
   Enabled: true
   Global Options:
-    Background Color: 155; 155; 155
+    Background Color: 185; 185; 185
     Default Light: true
     Fixed Frame: world
     Frame Rate: 30
@@ -358,7 +359,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.2920162677764893
+      Distance: 1.9885125160217285
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -374,9 +375,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.2147966623306274
+      Pitch: 0.3597973585128784
       Target Frame: <Fixed Frame>
-      Yaw: 3.4035301208496094
+      Yaw: 3.7485361099243164
     Saved: ~
 Window Geometry:
   Displays:
